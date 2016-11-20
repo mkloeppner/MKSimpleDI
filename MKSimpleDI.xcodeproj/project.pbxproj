@@ -12,6 +12,8 @@
 		B54E5AEB1DE1BC0400652D35 /* MKSimpleDI.h in Headers */ = {isa = PBXBuildFile; fileRef = B54E5ADD1DE1BC0400652D35 /* MKSimpleDI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B54E5AF61DE1BC2100652D35 /* MKDIContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B54E5AF41DE1BC2100652D35 /* MKDIContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B54E5AF71DE1BC2100652D35 /* MKDIContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E5AF51DE1BC2100652D35 /* MKDIContainer.m */; };
+		B54E5AFA1DE1BF9400652D35 /* ClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E5AF91DE1BF9400652D35 /* ClassA.m */; };
+		B54E5AFE1DE1BFA300652D35 /* ClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E5AFD1DE1BFA300652D35 /* ClassB.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,12 @@
 		B54E5AEA1DE1BC0400652D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B54E5AF41DE1BC2100652D35 /* MKDIContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKDIContainer.h; sourceTree = "<group>"; };
 		B54E5AF51DE1BC2100652D35 /* MKDIContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKDIContainer.m; sourceTree = "<group>"; };
+		B54E5AF81DE1BF9400652D35 /* ClassA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassA.h; sourceTree = "<group>"; };
+		B54E5AF91DE1BF9400652D35 /* ClassA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassA.m; sourceTree = "<group>"; };
+		B54E5AFC1DE1BFA300652D35 /* ClassB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassB.h; sourceTree = "<group>"; };
+		B54E5AFD1DE1BFA300652D35 /* ClassB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassB.m; sourceTree = "<group>"; };
+		B54E5AFF1DE1BFAE00652D35 /* A.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = A.h; sourceTree = "<group>"; };
+		B54E5B001DE1BFB600652D35 /* B.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = B.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,12 @@
 			children = (
 				B54E5AE81DE1BC0400652D35 /* MKSimpleDITests.m */,
 				B54E5AEA1DE1BC0400652D35 /* Info.plist */,
+				B54E5AF81DE1BF9400652D35 /* ClassA.h */,
+				B54E5AF91DE1BF9400652D35 /* ClassA.m */,
+				B54E5AFC1DE1BFA300652D35 /* ClassB.h */,
+				B54E5AFD1DE1BFA300652D35 /* ClassB.m */,
+				B54E5AFF1DE1BFAE00652D35 /* A.h */,
+				B54E5B001DE1BFB600652D35 /* B.h */,
 			);
 			path = MKSimpleDITests;
 			sourceTree = "<group>";
@@ -212,6 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54E5AFE1DE1BFA300652D35 /* ClassB.m in Sources */,
+				B54E5AFA1DE1BF9400652D35 /* ClassA.m in Sources */,
 				B54E5AE91DE1BC0400652D35 /* MKSimpleDITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
