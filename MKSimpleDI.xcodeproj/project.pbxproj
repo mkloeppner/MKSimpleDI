@@ -10,6 +10,8 @@
 		B54E5AE41DE1BC0400652D35 /* MKSimpleDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54E5ADA1DE1BC0400652D35 /* MKSimpleDI.framework */; };
 		B54E5AE91DE1BC0400652D35 /* MKSimpleDITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E5AE81DE1BC0400652D35 /* MKSimpleDITests.m */; };
 		B54E5AEB1DE1BC0400652D35 /* MKSimpleDI.h in Headers */ = {isa = PBXBuildFile; fileRef = B54E5ADD1DE1BC0400652D35 /* MKSimpleDI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B54E5AF61DE1BC2100652D35 /* MKDIContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B54E5AF41DE1BC2100652D35 /* MKDIContainer.h */; };
+		B54E5AF71DE1BC2100652D35 /* MKDIContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E5AF51DE1BC2100652D35 /* MKDIContainer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		B54E5AE31DE1BC0400652D35 /* MKSimpleDITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKSimpleDITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54E5AE81DE1BC0400652D35 /* MKSimpleDITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKSimpleDITests.m; sourceTree = "<group>"; };
 		B54E5AEA1DE1BC0400652D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B54E5AF41DE1BC2100652D35 /* MKDIContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKDIContainer.h; sourceTree = "<group>"; };
+		B54E5AF51DE1BC2100652D35 /* MKDIContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKDIContainer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				B54E5ADD1DE1BC0400652D35 /* MKSimpleDI.h */,
 				B54E5ADE1DE1BC0400652D35 /* Info.plist */,
+				B54E5AF41DE1BC2100652D35 /* MKDIContainer.h */,
+				B54E5AF51DE1BC2100652D35 /* MKDIContainer.m */,
 			);
 			path = MKSimpleDI;
 			sourceTree = "<group>";
@@ -94,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B54E5AEB1DE1BC0400652D35 /* MKSimpleDI.h in Headers */,
+				B54E5AF61DE1BC2100652D35 /* MKDIContainer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54E5AF71DE1BC2100652D35 /* MKDIContainer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
