@@ -11,6 +11,7 @@
 #import "ClassA.h"
 #import "ClassB.h"
 #import "ABService.h"
+#import "ABServiceWrapper.h"
 
 @interface MKSimpleDITests : XCTestCase
 
@@ -33,7 +34,37 @@
 }
 
 #pragma mark - Dependency Injection Tests
-- (void)testRegisterClassWithDependenciesReturnsInstanceWithSetDependencies
+- (void)testRegisterClassWithDependenciesReturnsInstanceWithInstanciatedDependenciesByResolvingSpecifiedClassWithTwoLevelOfInjection
+{
+    [_container registerClass:[ClassA class]];
+    [_container registerClass:[ClassB class]];
+    
+    [_container registerBlock:^id(MKDIContainer *container) {
+        return [[ABService alloc]
+                initWith:[_container resolveForClass:[ClassA class]]
+                and:[_container resolveForClass:[ClassB class]]
+                ];
+    } forClass:[ABService class]];
+    
+    [_container registerBlock:^id(MKDIContainer *container) {
+        return [[ABServiceWrapper alloc]
+                initWith:[_container resolveForClass:[ABService class]]
+                ];
+    } forClass:[ABServiceWrapper class]];
+    
+    ABServiceWrapper *abServiceWrapper = [_container resolveForClass:[ABServiceWrapper class]];
+    ABService *abService = abServiceWrapper.abService;
+    
+    XCTAssertNotNil(abServiceWrapper);
+    XCTAssertNotNil(abService);
+    XCTAssertNotNil(abService.a);
+    XCTAssertNotNil(abService.b);
+    XCTAssertTrue([abService isKindOfClass:[ABService class]]);
+    XCTAssertTrue([abService.a isKindOfClass:[ClassA class]]);
+    XCTAssertTrue([abService.b isKindOfClass:[ClassB class]]);
+}
+
+- (void)testRegisterClassWithDependenciesReturnsInstanceWithInstanciatedDependenciesByResolvingSpecifiedClassWithOneLevelOfInjection
 {
     [_container registerClass:[ClassA class]];
     [_container registerClass:[ClassB class]];

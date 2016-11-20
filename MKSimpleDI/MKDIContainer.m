@@ -8,6 +8,7 @@
 
 #import "MKDIContainer.h"
 
+NSString * const MKDIInjectionException = @"MKDIInjectionException";
 NSString * const MKDINonMemberOfClassException = @"MKDINonMemberOfClassException";
 NSString * const MKDINonConfirmingClassException = @"MKDINonConfirmingClassException";
 
@@ -187,14 +188,10 @@ NSString * const MKDINonConfirmingClassException = @"MKDINonConfirmingClassExcep
 #pragma mark - Private helpers
 - (void)assertNoImplementationForProtocolSoFar:(NSString *)identifier
 {
-    if ([self.classIndex objectForKey:identifier]) {
-        [NSException raise:@"InjectionException" format:@"A implementation for the protocol with name \"%@\" is already registered.", identifier];
-    }
-    if ([self.creationIndex objectForKey:identifier]) {
-        [NSException raise:@"InjectionException" format:@"A implementation for the protocol with name \"%@\" is already registered.", identifier];
-    }
-    if ([self.objectStore objectForKey:identifier]) {
-        [NSException raise:@"InjectionException" format:@"A implementation for the protocol with name \"%@\" is already registered.", identifier];
+    for (NSDictionary *store in @[self.objectStore, self.creationIndex, self.classIndex]) {
+        if ([store objectForKey:identifier]) {
+            [NSException raise:MKDIInjectionException format:@"A concrete type for a type with name \"%@\" is already registered. Use one of the override methods to change the concrete type during runtime.", identifier];
+        }
     }
 }
 

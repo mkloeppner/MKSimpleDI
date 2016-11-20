@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const MKDIInjectionException;
 extern NSString * const MKDINonMemberOfClassException;
 extern NSString * const MKDINonConfirmingClassException;
 
-@interface MKDIContainer : NSObject
+@interface MKDIContainer : NSObject 
 
 - (void)registerObject:(id<NSObject>)object;
 - (void)registerObject:(id<NSObject>)object forClass:(Class)clazz;
