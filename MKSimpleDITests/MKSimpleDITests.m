@@ -31,6 +31,44 @@
     [super tearDown];
 }
 
+#pragma mark - Register class methods
+- (void)testRegisterClassReturnsInstanceOfClassByResolvingSpecifiedClass
+{
+    [_container registerClass:[ClassA class]];
+    
+    id resolvedA = [_container resolveForClass:[ClassA class]];
+    
+    XCTAssertNotNil(resolvedA);
+    XCTAssertTrue([resolvedA isKindOfClass:[ClassA class]]);
+    XCTAssertEqual([resolvedA class], [ClassA class]);
+}
+
+- (void)testRegisterClassForProtocolReturnsInstanceOfClassByResolvingSpecifiedProtocol
+{
+    [_container registerClass:[ClassA class] forProtocol:@protocol(A)];
+    
+    id resolvedA = [_container resolveForProtocol:@protocol(A)];
+    
+    XCTAssertNotNil(resolvedA);
+    XCTAssertTrue([resolvedA isKindOfClass:[ClassA class]]);
+    XCTAssertEqual([resolvedA class], [ClassA class]);
+}
+
+- (void)testRegisterClassForProtocolThrowsExceptionWhenClassDoesNotConformToProtocol
+{
+    XCTAssertThrowsSpecificNamed([_container registerClass:[ClassA class] forProtocol:@protocol(B)], NSException, MKDINonConfirmingClassException, @"should throw an exception");
+}
+
+- (void)testRegisterClassReturnsInstanceOfClassByResolvingSpecifiedClassAlwaysReturnsNewInstance
+{
+    [_container registerClass:[ClassA class]];
+    
+    id resolvedA = [_container resolveForClass:[ClassA class]];
+    id resolvedB = [_container resolveForClass:[ClassA class]];
+    
+    XCTAssertNotEqual(resolvedA, resolvedB, @"should recreate and a new instance on resolving");
+}
+
 # pragma mark - Register object methods
 - (void)testRegisterObjectReturnsObjectByResolvingObjectsClass {
     ClassA *a = [ClassA new];
@@ -112,44 +150,6 @@
     XCTAssertEqual(resolvedA, a, @"Resolved objects need to match.");
     XCTAssertEqual(resolvedA2, resolvedA, @"Resolved objects need to match.");
     XCTAssertEqual(resolvedA3, resolvedA2, @"Resolved objects need to match.");
-}
-
-#pragma mark - Register class methods
-- (void)testRegisterClassReturnsInstanceOfClassByResolvingSpecifiedClass
-{
-    [_container registerClass:[ClassA class]];
-    
-    id resolvedA = [_container resolveForClass:[ClassA class]];
-    
-    XCTAssertNotNil(resolvedA);
-    XCTAssertTrue([resolvedA isKindOfClass:[ClassA class]]);
-    XCTAssertEqual([resolvedA class], [ClassA class]);
-}
-
-- (void)testRegisterClassForProtocolReturnsInstanceOfClassByResolvingSpecifiedProtocol
-{
-    [_container registerClass:[ClassA class] forProtocol:@protocol(A)];
-    
-    id resolvedA = [_container resolveForProtocol:@protocol(A)];
-    
-    XCTAssertNotNil(resolvedA);
-    XCTAssertTrue([resolvedA isKindOfClass:[ClassA class]]);
-    XCTAssertEqual([resolvedA class], [ClassA class]);
-}
-
-- (void)testRegisterClassForProtocolThrowsExceptionWhenClassDoesNotConformToProtocol
-{
-    XCTAssertThrowsSpecificNamed([_container registerClass:[ClassA class] forProtocol:@protocol(B)], NSException, MKDINonConfirmingClassException, @"should throw an exception");
-}
-
-- (void)testRegisterClassReturnsInstanceOfClassByResolvingSpecifiedClassAlwaysReturnsNewInstance
-{
-    [_container registerClass:[ClassA class]];
-    
-    id resolvedA = [_container resolveForClass:[ClassA class]];
-    id resolvedB = [_container resolveForClass:[ClassA class]];
-    
-    XCTAssertNotEqual(resolvedA, resolvedB, @"should recreate and a new instance on resolving");
 }
 
 @end
