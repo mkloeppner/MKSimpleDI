@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B54E5AE41DE1BC0400652D35 /* MKSimpleDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54E5ADA1DE1BC0400652D35 /* MKSimpleDI.framework */; };
+		B54E5AE91DE1BC0400652D35 /* MKSimpleDITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E5AE81DE1BC0400652D35 /* MKSimpleDITests.m */; };
+		B54E5AEB1DE1BC0400652D35 /* MKSimpleDI.h in Headers */ = {isa = PBXBuildFile; fileRef = B54E5ADD1DE1BC0400652D35 /* MKSimpleDI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B54E5AE51DE1BC0400652D35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B54E5AD11DE1BC0400652D35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B54E5AD91DE1BC0400652D35;
+			remoteInfo = MKSimpleDI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B54E5ADA1DE1BC0400652D35 /* MKSimpleDI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKSimpleDI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54E5ADD1DE1BC0400652D35 /* MKSimpleDI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKSimpleDI.h; sourceTree = "<group>"; };
+		B54E5ADE1DE1BC0400652D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B54E5AE31DE1BC0400652D35 /* MKSimpleDITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKSimpleDITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B54E5AE81DE1BC0400652D35 /* MKSimpleDITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKSimpleDITests.m; sourceTree = "<group>"; };
+		B54E5AEA1DE1BC0400652D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B54E5AD61DE1BC0400652D35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B54E5AE01DE1BC0400652D35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54E5AE41DE1BC0400652D35 /* MKSimpleDI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B54E5AD01DE1BC0400652D35 = {
+			isa = PBXGroup;
+			children = (
+				B54E5ADC1DE1BC0400652D35 /* MKSimpleDI */,
+				B54E5AE71DE1BC0400652D35 /* MKSimpleDITests */,
+				B54E5ADB1DE1BC0400652D35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B54E5ADB1DE1BC0400652D35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B54E5ADA1DE1BC0400652D35 /* MKSimpleDI.framework */,
+				B54E5AE31DE1BC0400652D35 /* MKSimpleDITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B54E5ADC1DE1BC0400652D35 /* MKSimpleDI */ = {
+			isa = PBXGroup;
+			children = (
+				B54E5ADD1DE1BC0400652D35 /* MKSimpleDI.h */,
+				B54E5ADE1DE1BC0400652D35 /* Info.plist */,
+			);
+			path = MKSimpleDI;
+			sourceTree = "<group>";
+		};
+		B54E5AE71DE1BC0400652D35 /* MKSimpleDITests */ = {
+			isa = PBXGroup;
+			children = (
+				B54E5AE81DE1BC0400652D35 /* MKSimpleDITests.m */,
+				B54E5AEA1DE1BC0400652D35 /* Info.plist */,
+			);
+			path = MKSimpleDITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B54E5AD71DE1BC0400652D35 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54E5AEB1DE1BC0400652D35 /* MKSimpleDI.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B54E5AD91DE1BC0400652D35 /* MKSimpleDI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B54E5AEE1DE1BC0400652D35 /* Build configuration list for PBXNativeTarget "MKSimpleDI" */;
+			buildPhases = (
+				B54E5AD51DE1BC0400652D35 /* Sources */,
+				B54E5AD61DE1BC0400652D35 /* Frameworks */,
+				B54E5AD71DE1BC0400652D35 /* Headers */,
+				B54E5AD81DE1BC0400652D35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MKSimpleDI;
+			productName = MKSimpleDI;
+			productReference = B54E5ADA1DE1BC0400652D35 /* MKSimpleDI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B54E5AE21DE1BC0400652D35 /* MKSimpleDITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B54E5AF11DE1BC0400652D35 /* Build configuration list for PBXNativeTarget "MKSimpleDITests" */;
+			buildPhases = (
+				B54E5ADF1DE1BC0400652D35 /* Sources */,
+				B54E5AE01DE1BC0400652D35 /* Frameworks */,
+				B54E5AE11DE1BC0400652D35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B54E5AE61DE1BC0400652D35 /* PBXTargetDependency */,
+			);
+			name = MKSimpleDITests;
+			productName = MKSimpleDITests;
+			productReference = B54E5AE31DE1BC0400652D35 /* MKSimpleDITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B54E5AD11DE1BC0400652D35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Martin Kloeppner";
+				TargetAttributes = {
+					B54E5AD91DE1BC0400652D35 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = EZ9AN92LB4;
+						ProvisioningStyle = Automatic;
+					};
+					B54E5AE21DE1BC0400652D35 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = EZ9AN92LB4;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B54E5AD41DE1BC0400652D35 /* Build configuration list for PBXProject "MKSimpleDI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B54E5AD01DE1BC0400652D35;
+			productRefGroup = B54E5ADB1DE1BC0400652D35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B54E5AD91DE1BC0400652D35 /* MKSimpleDI */,
+				B54E5AE21DE1BC0400652D35 /* MKSimpleDITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B54E5AD81DE1BC0400652D35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B54E5AE11DE1BC0400652D35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B54E5AD51DE1BC0400652D35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B54E5ADF1DE1BC0400652D35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B54E5AE91DE1BC0400652D35 /* MKSimpleDITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B54E5AE61DE1BC0400652D35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B54E5AD91DE1BC0400652D35 /* MKSimpleDI */;
+			targetProxy = B54E5AE51DE1BC0400652D35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B54E5AEC1DE1BC0400652D35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B54E5AED1DE1BC0400652D35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B54E5AEF1DE1BC0400652D35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EZ9AN92LB4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MKSimpleDI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkloeppner.MKSimpleDI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B54E5AF01DE1BC0400652D35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = EZ9AN92LB4;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MKSimpleDI/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkloeppner.MKSimpleDI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B54E5AF21DE1BC0400652D35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = EZ9AN92LB4;
+				INFOPLIST_FILE = MKSimpleDITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkloeppner.MKSimpleDITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B54E5AF31DE1BC0400652D35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = EZ9AN92LB4;
+				INFOPLIST_FILE = MKSimpleDITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mkloeppner.MKSimpleDITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B54E5AD41DE1BC0400652D35 /* Build configuration list for PBXProject "MKSimpleDI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54E5AEC1DE1BC0400652D35 /* Debug */,
+				B54E5AED1DE1BC0400652D35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B54E5AEE1DE1BC0400652D35 /* Build configuration list for PBXNativeTarget "MKSimpleDI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54E5AEF1DE1BC0400652D35 /* Debug */,
+				B54E5AF01DE1BC0400652D35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B54E5AF11DE1BC0400652D35 /* Build configuration list for PBXNativeTarget "MKSimpleDITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B54E5AF21DE1BC0400652D35 /* Debug */,
+				B54E5AF31DE1BC0400652D35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B54E5AD11DE1BC0400652D35 /* Project object */;
+}
