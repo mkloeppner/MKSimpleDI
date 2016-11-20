@@ -8,6 +8,9 @@
 
 #import "MKDIContainer.h"
 
+NSString * const MKDINonMemberOfClassException = @"MKDINonMemberOfClassException";
+NSString * const MKDINonConfirmingClassException = @"MKDINonConfirmingClassException";
+
 @interface MKDIContainer ()
 
 @property (strong, nonatomic) NSMutableDictionary<NSString *, NSString *> *classIndex;
@@ -37,11 +40,15 @@
 
 - (void)registerObject:(id<NSObject>)object forProtocol:(Protocol *)protocol
 {
+    [self assertObject:object conformsTo:protocol];
+    
     [self registerObject:object forIdentifier:NSStringFromProtocol(protocol)];
 }
 
 - (void)registerObject:(id<NSObject>)object forClass:(Class)clazz
 {
+    [self assertObject:object inheritsFrom:clazz];
+    
     [self registerObject:object forIdentifier:NSStringFromClass(clazz)];
 }
 
@@ -54,6 +61,8 @@
 
 - (void)registerClass:(Class)clazz forProtocol:(Protocol *)protocol
 {
+    [self assertClass:clazz conformsTo:protocol];
+    
     [self registerClass:clazz forIdentifier:NSStringFromProtocol(protocol)];
 }
 
@@ -196,5 +205,23 @@
     [self.objectStore removeObjectForKey:identifier];
 }
 
+- (void)assertObject:(id<NSObject>)object conformsTo:(Protocol *)protol
+{
+    [self assertClass:[object class] conformsTo:protol];
+}
+
+- (void)assertObject:(id<NSObject>)object inheritsFrom:(Class)clazz
+{
+    if (![object isKindOfClass:clazz]) {
+        [NSException raise:MKDINonMemberOfClassException format:@"Specified object is not member of class:\n\n  Is %@, expected: Member of %@.", NSStringFromClass([object class]), NSStringFromClass(clazz)];
+    }
+}
+
+- (void)assertClass:(Class)clazz conformsTo:(Protocol *)protocol
+{
+    if (![clazz conformsToProtocol:protocol]) {
+        [NSException raise:MKDINonConfirmingClassException format:@"Specified class does not conform to protocol:\n\n   %@ > %@", NSStringFromClass(clazz), NSStringFromProtocol(protocol)];
+    }
+}
 
 @end

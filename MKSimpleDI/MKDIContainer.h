@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const MKDINonMemberOfClassException;
+extern NSString * const MKDINonConfirmingClassException;
+
 @interface MKDIContainer : NSObject
 
 - (void)registerObject:(id<NSObject>)object;
