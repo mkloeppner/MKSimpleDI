@@ -29,6 +29,7 @@
     return self;
 }
 
+#pragma mark - Register objects
 - (void)registerObject:(id<NSObject>)object
 {
     [self registerObject:object forClass:[object class]];
@@ -44,6 +45,7 @@
     [self registerObject:object forIdentifier:NSStringFromClass(clazz)];
 }
 
+#pragma mark - Register Class
 - (void)registerClass:(Class)clazz
 {
     NSString *key = NSStringFromClass(clazz);
@@ -55,6 +57,7 @@
     [self registerClass:clazz forIdentifier:NSStringFromProtocol(protocol)];
 }
 
+#pragma mark - Register block
 - (void)registerBlock:(id (^)(MKDIContainer *))creation forProtocol:(Protocol *)protocol
 {
     return [self registerBlock:creation forIdentifier:NSStringFromProtocol(protocol)];
@@ -65,6 +68,7 @@
     return [self registerBlock:creation forIdentifier:NSStringFromClass(protocol)];
 }
 
+#pragma mark - Register by identifier
 - (void)registerObject:(id<NSObject>)object forIdentifier:(NSString *)identifier
 {
     [self assertNoImplementationForProtocolSoFar:identifier];
@@ -87,19 +91,7 @@
     self.creationIndex[identifier] = creation;
 }
 
-- (void)assertNoImplementationForProtocolSoFar:(NSString *)identifier
-{
-    if ([self.classIndex objectForKey:identifier]) {
-        [NSException raise:@"InjectionException" format:@"A implementation for the protocol with name \"%@\" is already registered.", identifier];
-    }
-    if ([self.creationIndex objectForKey:identifier]) {
-        [NSException raise:@"InjectionException" format:@"A implementation for the protocol with name \"%@\" is already registered.", identifier];
-    }
-    if ([self.objectStore objectForKey:identifier]) {
-        [NSException raise:@"InjectionException" format:@"A implementation for the protocol with name \"%@\" is already registered.", identifier];
-    }
-}
-
+#pragma mark - Override object
 - (void)overrideObject:(id<NSObject>)object forProtocol:(Protocol *)protocol
 {
     NSString *identifier = NSStringFromProtocol(protocol);
@@ -114,6 +106,7 @@
     [self registerObject:object forIdentifier:identifier];
 }
 
+#pragma mark - Override class
 - (void)overrideClass:(Class)clazz forProtocol:(Protocol *)protocol
 {
     NSString *identifier = NSStringFromProtocol(protocol);
@@ -121,6 +114,7 @@
     [self registerClass:clazz forProtocol:protocol];
 }
 
+#pragma mark - Override block
 - (void)overrideBlock:(id (^)(MKDIContainer *))creation forProtocol:(Protocol *)protocol
 {
     NSString *identifier = NSStringFromProtocol(protocol);
@@ -135,6 +129,7 @@
     [self registerBlock:creation forClass:clazz];
 }
 
+#pragma mark - Override by identifier
 - (void)overrideObject:(id<NSObject>)object forIdentifier:(NSString *)identifier
 {
     [self removeImplementationForIdentifier:identifier];
@@ -153,13 +148,7 @@
     [self registerBlock:creation forIdentifier:identifier];
 }
 
-- (void)removeImplementationForIdentifier:(NSString *)identifier
-{
-    [self.classIndex removeObjectForKey:identifier];
-    [self.creationIndex removeObjectForKey:identifier];
-    [self.objectStore removeObjectForKey:identifier];
-}
-
+#pragma mark - Resolve methods
 - (id)resolveForProtocol:(Protocol *)protocol
 {
     return [self resolveForIdentifier:NSStringFromProtocol(protocol)];
@@ -185,5 +174,27 @@
     }
     return nil;
 }
+
+#pragma mark - Private helpers
+- (void)assertNoImplementationForProtocolSoFar:(NSString *)identifier
+{
+    if ([self.classIndex objectForKey:identifier]) {
+        [NSException raise:@"InjectionException" format:@"A implementation for the protocol with name \"%@\" is already registered.", identifier];
+    }
+    if ([self.creationIndex objectForKey:identifier]) {
+        [NSException raise:@"InjectionException" format:@"A implementation for the protocol with name \"%@\" is already registered.", identifier];
+    }
+    if ([self.objectStore objectForKey:identifier]) {
+        [NSException raise:@"InjectionException" format:@"A implementation for the protocol with name \"%@\" is already registered.", identifier];
+    }
+}
+
+- (void)removeImplementationForIdentifier:(NSString *)identifier
+{
+    [self.classIndex removeObjectForKey:identifier];
+    [self.creationIndex removeObjectForKey:identifier];
+    [self.objectStore removeObjectForKey:identifier];
+}
+
 
 @end
