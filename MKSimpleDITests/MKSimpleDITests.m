@@ -10,6 +10,7 @@
 #import "MKSimpleDI.h"
 #import "ClassA.h"
 #import "ClassB.h"
+#import "ABService.h"
 
 @interface MKSimpleDITests : XCTestCase
 
@@ -29,6 +30,58 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+}
+
+#pragma mark - Dependency Injection Tests
+- (void)testRegisterClassWithDependenciesReturnsInstanceWithSetDependencies
+{
+    [_container registerClass:[ClassA class]];
+    [_container registerClass:[ClassB class]];
+    
+    [_container registerBlock:^id(MKDIContainer *container) {
+        return [[ABService alloc]
+                initWith:[_container resolveForClass:[ClassA class]]
+                     and:[_container resolveForClass:[ClassB class]]
+                ];
+    } forClass:[ABService class]];
+    
+    ABService *abService = [_container resolveForClass:[ABService class]];
+    
+    
+    XCTAssertNotNil(abService);
+    XCTAssertNotNil(abService.a);
+    XCTAssertNotNil(abService.b);
+    XCTAssertTrue([abService isKindOfClass:[ABService class]]);
+    XCTAssertTrue([abService.a isKindOfClass:[ClassA class]]);
+    XCTAssertTrue([abService.b isKindOfClass:[ClassB class]]);
+}
+
+
+#pragma mark - Register block methods
+- (void)testRegisterBlockForClassReturnsInstanceByResolvingSpecifiedClass
+{
+    [_container registerBlock:^id(MKDIContainer *container) {
+        return [ClassA new];
+    } forClass:[ClassA class]];
+    
+    id resolvedA = [_container resolveForClass:[ClassA class]];
+    
+    XCTAssertNotNil(resolvedA);
+    XCTAssertTrue([resolvedA isKindOfClass:[ClassA class]]);
+    XCTAssertEqual([resolvedA class], [ClassA class]);
+}
+
+- (void)testRegisterBlockForProtocolReturnsInstanceByResolvingSpecifiedProtocol
+{
+    [_container registerBlock:^id(MKDIContainer *container) {
+        return [ClassA new];
+    } forProtocol:@protocol(A)];
+    
+    id resolvedA = [_container resolveForProtocol:@protocol(A)];
+    
+    XCTAssertNotNil(resolvedA);
+    XCTAssertTrue([resolvedA isKindOfClass:[ClassA class]]);
+    XCTAssertEqual([resolvedA class], [ClassA class]);
 }
 
 #pragma mark - Register class methods

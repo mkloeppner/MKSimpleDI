@@ -67,12 +67,12 @@ NSString * const MKDINonConfirmingClassException = @"MKDINonConfirmingClassExcep
 }
 
 #pragma mark - Register block
-- (void)registerBlock:(id (^)(MKDIContainer *))creation forProtocol:(Protocol *)protocol
+- (void)registerBlock:(id (^)(MKDIContainer *container))creation forProtocol:(Protocol *)protocol
 {
     return [self registerBlock:creation forIdentifier:NSStringFromProtocol(protocol)];
 }
 
-- (void)registerBlock:(id (^)(MKDIContainer *))creation forClass:(Class)protocol
+- (void)registerBlock:(id (^)(MKDIContainer *container))creation forClass:(Class)protocol
 {
     return [self registerBlock:creation forIdentifier:NSStringFromClass(protocol)];
 }
@@ -124,14 +124,14 @@ NSString * const MKDINonConfirmingClassException = @"MKDINonConfirmingClassExcep
 }
 
 #pragma mark - Override block
-- (void)overrideBlock:(id (^)(MKDIContainer *))creation forProtocol:(Protocol *)protocol
+- (void)overrideBlock:(id (^)(MKDIContainer *container))creation forProtocol:(Protocol *)protocol
 {
     NSString *identifier = NSStringFromProtocol(protocol);
     [self removeImplementationForIdentifier:identifier];
     [self registerBlock:creation forProtocol:protocol];
 }
 
-- (void)overrideBlock:(id (^)(MKDIContainer *))creation forClass:(Class)clazz
+- (void)overrideBlock:(id (^)(MKDIContainer *container))creation forClass:(Class)clazz
 {
     NSString *identifier = NSStringFromClass(clazz);
     [self removeImplementationForIdentifier:identifier];

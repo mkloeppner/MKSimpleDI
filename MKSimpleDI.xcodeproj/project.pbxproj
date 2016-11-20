@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51ED1391DE1D5D900C644E3 /* ABService.m in Sources */ = {isa = PBXBuildFile; fileRef = B51ED1381DE1D5D900C644E3 /* ABService.m */; };
 		B54E5AE41DE1BC0400652D35 /* MKSimpleDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54E5ADA1DE1BC0400652D35 /* MKSimpleDI.framework */; };
 		B54E5AE91DE1BC0400652D35 /* MKSimpleDITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E5AE81DE1BC0400652D35 /* MKSimpleDITests.m */; };
 		B54E5AEB1DE1BC0400652D35 /* MKSimpleDI.h in Headers */ = {isa = PBXBuildFile; fileRef = B54E5ADD1DE1BC0400652D35 /* MKSimpleDI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B51ED1371DE1D5D900C644E3 /* ABService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABService.h; sourceTree = "<group>"; };
+		B51ED1381DE1D5D900C644E3 /* ABService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABService.m; sourceTree = "<group>"; };
 		B54E5ADA1DE1BC0400652D35 /* MKSimpleDI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKSimpleDI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54E5ADD1DE1BC0400652D35 /* MKSimpleDI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKSimpleDI.h; sourceTree = "<group>"; };
 		B54E5ADE1DE1BC0400652D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 			children = (
 				B54E5AE81DE1BC0400652D35 /* MKSimpleDITests.m */,
 				B54E5AEA1DE1BC0400652D35 /* Info.plist */,
+				B51ED1371DE1D5D900C644E3 /* ABService.h */,
+				B51ED1381DE1D5D900C644E3 /* ABService.m */,
 				B54E5AF81DE1BF9400652D35 /* ClassA.h */,
 				B54E5AF91DE1BF9400652D35 /* ClassA.m */,
 				B54E5AFC1DE1BFA300652D35 /* ClassB.h */,
@@ -228,6 +233,7 @@
 			files = (
 				B54E5AFE1DE1BFA300652D35 /* ClassB.m in Sources */,
 				B54E5AFA1DE1BF9400652D35 /* ClassA.m in Sources */,
+				B51ED1391DE1D5D900C644E3 /* ABService.m in Sources */,
 				B54E5AE91DE1BC0400652D35 /* MKSimpleDITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
