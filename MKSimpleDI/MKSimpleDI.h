@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MKDIContainer.h"
 
 //! Project version number for MKSimpleDI.
 FOUNDATION_EXPORT double MKSimpleDIVersionNumber;

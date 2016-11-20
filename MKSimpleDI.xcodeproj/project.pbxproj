@@ -10,7 +10,7 @@
 		B54E5AE41DE1BC0400652D35 /* MKSimpleDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54E5ADA1DE1BC0400652D35 /* MKSimpleDI.framework */; };
 		B54E5AE91DE1BC0400652D35 /* MKSimpleDITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E5AE81DE1BC0400652D35 /* MKSimpleDITests.m */; };
 		B54E5AEB1DE1BC0400652D35 /* MKSimpleDI.h in Headers */ = {isa = PBXBuildFile; fileRef = B54E5ADD1DE1BC0400652D35 /* MKSimpleDI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B54E5AF61DE1BC2100652D35 /* MKDIContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B54E5AF41DE1BC2100652D35 /* MKDIContainer.h */; };
+		B54E5AF61DE1BC2100652D35 /* MKDIContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = B54E5AF41DE1BC2100652D35 /* MKDIContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B54E5AF71DE1BC2100652D35 /* MKDIContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = B54E5AF51DE1BC2100652D35 /* MKDIContainer.m */; };
 /* End PBXBuildFile section */
 
